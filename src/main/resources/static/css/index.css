@@ -1,0 +1,20 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.layout-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+    "logo header"
+    "sidebar content";
+    grid-template-columns: 160px 1fr;
+    grid-template-rows: 60px 1fr;
+}
+.content-container {
+    grid-area: content;
+    padding: 24px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" class="auth">
+    <div class="auth-box">
+        <div class="auth-tabs">
+            <button class="auth-button">로그인</button>
+            <button class="auth-button">회원가입</button>
+        </div>
+        <div class="auth-form-container">
+            <th:block th:if="${tab} == 'login'">
+                <div th:replace="~{fragments/auth/login :: content}"></div>
+            </th:block>
+            <th:block th:if="${tab} == 'signup'">
+                <div th:replace="~{fragments/auth/signup :: content}"></div>
+            </th:block>
+        </div>
+    </div>
+</div>
+</body>
+</html>

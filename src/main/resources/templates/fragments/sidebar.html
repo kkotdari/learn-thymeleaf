@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" class="sidebar">
+    <div class="sidebar-menus">
+        <div th:each="m : ${session.menus}" class="category-family">
+            <div class="category" th:text="${m.name}"></div>
+            <div th:each="s : ${m.subs}" class="subcategory" th:text="${s.name}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.tabbar {
+    grid-area: tabbar;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    background-color: darkgreen;
+}

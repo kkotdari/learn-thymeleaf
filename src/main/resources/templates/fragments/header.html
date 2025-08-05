@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" class="header">
+    <span class="header-text" onclick="route('auth\/login')">
+        로그인
+    </span>
+    <span>
+        &nbsp;|&nbsp;
+    </span>
+    <span class="header-text" onclick="route('auth\/signup')">
+        회원가입
+    </span>
+</div>
+</body>
+</html>
