@@ -1,6 +1,6 @@
-package kkotdari.thymeleaf.service;
+package kkotdari.learnthymeleaf.service;
 
-import kkotdari.thymeleaf.model.Menu;
+import kkotdari.learnthymeleaf.model.Menu;
 
 import java.util.List;
 

@@ -10,11 +10,11 @@
         <relativePath/>
     </parent>
     <groupId>kkotdari</groupId>
-    <artifactId>thymeleaf</artifactId>
+    <artifactId>learn-thymeleaf</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>thymeleaf</name>
-    <description>thymeleaf</description>
+    <description>learn-thymeleaf</description>
     <properties>
         <java.version>17</java.version>
     </properties>

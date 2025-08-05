@@ -1,4 +1,4 @@
-package kkotdari.thymeleaf.model;
+package kkotdari.learnthymeleaf.model;
 
 import java.util.List;
 

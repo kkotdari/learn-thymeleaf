@@ -1,9 +1,9 @@
-package kkotdari.thymeleaf.controller;
+package kkotdari.learnthymeleaf.controller;
 
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
-import kkotdari.thymeleaf.model.Menu;
-import kkotdari.thymeleaf.service.MenuService;
+import kkotdari.learnthymeleaf.model.Menu;
+import kkotdari.learnthymeleaf.service.MenuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package kkotdari.thymeleaf;
+package kkotdari.learnthymeleaf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,9 +1,9 @@
-package kkotdari.thymeleaf.service.impl;
+package kkotdari.learnthymeleaf.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import kkotdari.thymeleaf.model.Menu;
-import kkotdari.thymeleaf.service.MenuService;
+import kkotdari.learnthymeleaf.model.Menu;
+import kkotdari.learnthymeleaf.service.MenuService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

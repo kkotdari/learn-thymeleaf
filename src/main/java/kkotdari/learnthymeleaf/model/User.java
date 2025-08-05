@@ -1,4 +1,4 @@
-package kkotdari.thymeleaf.model;
+package kkotdari.learnthymeleaf.model;
 
 public class User {
     private long id;
