@@ -1,22 +1,17 @@
 window.route = function(path) {
-    console.log('Routing start')
-    fetch(`/routes/${path}`)
-        .then(response => {
-            console.log('Fetch finished: ', response.ok)
-            if (!response.ok) throw new Error('Failed to load content')
-            return response.text()
+    console.log('window > route: path: ', path)
+    fetch(`/${path}`)
+        .then(res => {
+            console.log('window > route: fetch finished: ', res.ok)
+            if (!res.ok) {
+                throw new Error('Failed to load content')
+            }
+            return res.text()
         })
         .then(html => {
-            console.log('html: ', html)
-            const container = document.getElementById('content-container')
-            console.log('container: ', container)
-            if (container) {
-                container.innerHTML = html
-            } else {
-                console.error('#content-container not found')
-            }
+            document.getElementById('content-container').innerHTML = html
         })
         .catch(error => {
-            console.error('Routing error:', error)
+            console.error('window > route: error:', error)
         })
 }

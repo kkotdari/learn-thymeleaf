@@ -4,32 +4,40 @@ import jakarta.servlet.http.HttpSession;
 import kkotdari.learnthymeleaf.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
+
+    @GetMapping("/login")
+    public String showLoginForm(Model model) {
+        model.addAttribute("tab", "login");
+        return "fragments/auth/index :: content";
+    }
+
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, HttpSession session) {
+    public String login(@RequestParam String username, @RequestParam String password, HttpSession session, Model model) {
         if (!"admin".equals(username) || !"1234".equals(password)) {
-            return "/login?error";
+            model.addAttribute("tab", "login");
+            return "fragments/auth/index :: content";
         }
         final User user = new User();
         user.setUsername(username);
         session.setAttribute("user", user);
-        return "redirect:/";
+        return "fragments/index :: content";
+    }
+
+    @GetMapping("/signup")
+    public String showSignupForm(Model model) {
+        model.addAttribute("tab", "signup");
+        return "fragments/auth/index :: content";
     }
 
     @PostMapping("/signup")
-    public String signup(@RequestParam String username, @RequestParam String password, Model model) {
-        if (!"admin".equals(username) || !"1234".equals(password)) {
-            return "/signup?error";
-        }
-        final User user = new User();
-        user.setUsername(username);
-        model.addAttribute("resultMsg", "회원가입 성공!");
-        return "redirect:/routes/auth/login";
+    public String signup(@RequestParam String username, @RequestParam String password) {
+        System.out.println("username: " + username + " password: " + password);
+        return "fragments/index :: content";
     }
+
 }

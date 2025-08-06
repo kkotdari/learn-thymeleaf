@@ -3,10 +3,10 @@
 <body>
 <div th:fragment="content" class="auth">
     <div class="auth-box">
-        <div class="auth-tabs">
-            <button class="auth-button">로그인</button>
-            <button class="auth-button">회원가입</button>
-        </div>
+<!--        <div class="auth-tabs">-->
+<!--            <button class="auth-button">로그인</button>-->
+<!--            <button class="auth-button">회원가입</button>-->
+<!--        </div>-->
         <div class="auth-form-container">
             <th:block th:if="${tab} == 'login'">
                 <div th:replace="~{fragments/auth/login :: content}"></div>

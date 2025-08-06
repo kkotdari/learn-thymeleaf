@@ -5,7 +5,14 @@
     <div class="sidebar-menus">
         <div th:each="m : ${session.menus}" class="category-family">
             <div class="category" th:text="${m.name}"></div>
-            <div th:each="s : ${m.subs}" class="subcategory" th:text="${s.name}"></div>
+            <div
+                th:each="s : ${m.subs}"
+                class="subcategory"
+                th:text="${s.name}"
+                th:attr="data-path=${s.path}"
+                onclick="route(this.dataset.path)"
+            >
+            </div>
         </div>
     </div>
 </div>
