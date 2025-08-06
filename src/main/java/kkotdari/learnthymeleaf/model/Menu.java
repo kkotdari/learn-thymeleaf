@@ -3,6 +3,7 @@ package kkotdari.learnthymeleaf.model;
 import java.util.List;
 
 public class Menu {
+
     private String parentId;
     private int order;
     private String id;
@@ -33,4 +34,5 @@ public class Menu {
     public List<Menu> getSubs() {
         return subs;
     }
+
 }

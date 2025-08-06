@@ -3,20 +3,20 @@
 <body>
 <form th:fragment="content" id="signup-form" class="signup-form">
     <div class="auth-inputs">
-        <div class="input-with-label">
+        <div class="common-input-with-label">
             <label for="username">아이디</label>
             <input type="text" id="username" name="username" required>
         </div>
-        <div class="input-with-label">
+        <div class="common-input-with-label">
             <label for="password">비밀번호</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <div class="input-with-label">
+        <div class="common-input-with-label">
             <label for="passwordConfirm">비밀번호</label>
             <input type="password" id="passwordConfirm" name="passwordConfirm" required>
         </div>
     </div>
-    <button class="auth-submit-button" type="submit">회원가입</button>
+    <button class="common-button" type="submit">회원가입</button>
 </form>
 
 <script>

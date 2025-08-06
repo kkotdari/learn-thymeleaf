@@ -1,6 +1,7 @@
 package kkotdari.learnthymeleaf.model;
 
 public class User {
+
     private long id;
     private String username;
     private String name;
@@ -37,4 +38,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

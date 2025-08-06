@@ -16,10 +16,15 @@ public class HomeController {
     private MenuService menuService;
 
     @GetMapping
-    public String home(HttpSession session) {
+    public String showHomePage(HttpSession session) {
         List<Menu> menus = menuService.getMenus();
         session.setAttribute("menus", menus);
         return "index";
     }
 
+
+    @GetMapping("/home")
+    public String showHomeFragment() {
+        return "fragments/index :: content";
+    }
 }

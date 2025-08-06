@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" id="affiliate-master-details">
+    <div class="common-title-sm">제휴사 마스터 > 상세정보</div>
+    <form id="affiliate-master-details-form">
+        <input name="id" th:value="${details.id}" hidden="hidden">
+        <table class="common-table">
+            <tbody>
+                <tr>
+                    <th rowspan="2" style="width:30%;">
+                        <label class="common-label">기본정보</label>
+                    </th>
+                    <th style="width:30%;">
+                        <label class="common-label" for="ticker">업체코드</label>
+                    </th>
+                    <td style="width:60%;">
+                        <input type="text" class="common-input" id="ticker" name="ticker" th:placeholder="${details.ticker}" th:value="${details.ticker}" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width:30%;">
+                        <label class="common-label" for="name">업체명</label>
+                    </th>
+                    <td style="width:60%;">
+                        <input type="text" class="common-input" id="name" name="name" th:placeholder="${details.name}" th:value="${details.name}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="2" style="width:30%;">
+                        <label class="common-label">제휴기간</label>
+                    </th>
+                    <th style="width:30%;">
+                        <label class="common-label" for="startDate">시작일</label>
+                    </th>
+                    <td style="width:60%;">
+                        <input type="text" class="common-input" id="startDate" name="startDate" th:placeholder="${details.startDate}" th:value="${details.startDate}" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="width:30%;">
+                        <label class="common-label" for="endDate">종료일</label>
+                    </th>
+                    <td style="width:60%;">
+                        <input type="text" class="common-input" id="endDate" name="endDate" th:placeholder="${details.endDate}" th:value="${details.endDate}" required>
+                    </td>
+            </tbody>
+        </table>
+    </form>
+    <div class="common-horizontal-buttons">
+        <button id="affiliate-details-submit-btn" class="common-button">저장</button>
+        <button id="affiliate-details-abort-btn" class="common-button" onclick="closeModal()">취소</button>
+    </div>
+</div>
+</body>
+</html>

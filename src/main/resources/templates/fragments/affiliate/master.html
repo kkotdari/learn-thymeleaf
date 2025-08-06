@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<div th:fragment="content">
-    <div class="">
-
-    </div>
+<div th:fragment="content" class="affiliate-master">
+    <div class="common-title">제휴사 마스터 > 제휴사 목록</div>
+    <table class="common-table">
+        <thead>
+            <tr>
+                <th rowspan="2">
+                    순번
+                </th>
+                <th rowspan="2">
+                    업체코드
+                </th>
+                <th rowspan="2">
+                    업체명
+                </th>
+                <th colspan="2">
+                    제휴기간
+                </th>
+                <th rowspan="2">
+                    관리
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    시작일
+                </th>
+                <th>
+                    종료일
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                th:each="a, iterStat : ${affiliates}"
+            >
+                <td th:text="${iterStat.index} + 1"></td>
+                <td th:text="${a.ticker}"></td>
+                <td th:text="${a.name}"></td>
+                <td th:text="${a.startDate}"></td>
+                <td th:text="${a.endDate}"></td>
+                <td>
+                    <button
+                        type="button"
+                        class="open-modal-btn"
+                        th:onclick="|openModal('/affiliate/master/' + ${a.id}, 600, 400)|"
+                    >
+                        열기
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
-<script>
-</script>
 </body>
 </html>
