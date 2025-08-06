@@ -110,7 +110,6 @@
     background-color: darkgreen;
 }
 .common-button:hover {
-    border: 1px solid darkgreen;
     color: whitesmoke;
     background-color:mediumseagreen;
 }
