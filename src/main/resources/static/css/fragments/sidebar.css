@@ -39,10 +39,6 @@
     background-color: white;
     color: darkgreen;
 }
-.category:hover {
-    color: darkblue;
-    cursor: pointer;
-}
 .subcategory {
     width: 100%;
     height: fit-content;
