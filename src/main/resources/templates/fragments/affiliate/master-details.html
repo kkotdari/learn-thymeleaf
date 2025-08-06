@@ -15,7 +15,7 @@
                         <label class="common-label" for="ticker">업체코드</label>
                     </th>
                     <td style="width:60%;">
-                        <input type="text" class="common-input" id="ticker" name="ticker" th:placeholder="${details.ticker}" th:value="${details.ticker}" disabled>
+                        <input type="text" class="common-input" id="ticker" name="ticker" placeholder="1~10글자. 영문 대문자" th:value="${details.ticker}" disabled>
                     </td>
                 </tr>
                 <tr>
@@ -23,7 +23,7 @@
                         <label class="common-label" for="name">업체명</label>
                     </th>
                     <td style="width:60%;">
-                        <input type="text" class="common-input" id="name" name="name" th:placeholder="${details.name}" th:value="${details.name}" required>
+                        <input type="text" class="common-input" id="name" name="name" placeholder="1~20글자" th:value="${details.name}" required>
                     </td>
                 </tr>
                 <tr>
@@ -34,7 +34,7 @@
                         <label class="common-label" for="startDate">시작일</label>
                     </th>
                     <td style="width:60%;">
-                        <input type="text" class="common-input" id="startDate" name="startDate" th:placeholder="${details.startDate}" th:value="${details.startDate}" required>
+                        <input type="text" class="common-input" id="startDate" name="startDate" placeholder="yyyy-mm-dd" th:value="${details.startDate}" required>
                     </td>
                 </tr>
                 <tr>
@@ -42,7 +42,7 @@
                         <label class="common-label" for="endDate">종료일</label>
                     </th>
                     <td style="width:60%;">
-                        <input type="text" class="common-input" id="endDate" name="endDate" th:placeholder="${details.endDate}" th:value="${details.endDate}" required>
+                        <input type="text" class="common-input" id="endDate" name="endDate" placeholder="yyyy-mm-dd" th:value="${details.endDate}" required>
                     </td>
             </tbody>
         </table>

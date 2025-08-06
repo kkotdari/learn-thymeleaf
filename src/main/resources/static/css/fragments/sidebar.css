@@ -6,7 +6,7 @@
     justify-content: start;
     align-items: start;
     gap: 8px;
-    background-color: mediumseagreen;
+    background-color: seagreen;
 }
 .sidebar-menus {
     width: 100%;
@@ -52,7 +52,7 @@
     padding: 0 4px 0 4px;
     font-size: 12px;
     font-weight: 500;
-    background-color: mediumseagreen;
+    background-color: seagreen;
     color: whitesmoke;
 }
 .subcategory:hover {
