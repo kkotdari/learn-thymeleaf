@@ -8,42 +8,67 @@
         <table class="common-table">
             <tbody>
                 <tr>
-                    <th rowspan="2" style="width:30%;">
+                    <th rowspan="2" style="width:25%;">
                         <label class="common-label">기본정보</label>
                     </th>
-                    <th style="width:30%;">
+                    <th style="width:25%;">
                         <label class="common-label" for="ticker">업체코드</label>
                     </th>
-                    <td style="width:60%;">
+                    <td style="width:50%;">
                         <input type="text" class="common-input" id="ticker" name="ticker" placeholder="1~10글자. 영문 대문자" th:value="${details.ticker}" disabled>
                     </td>
                 </tr>
                 <tr>
-                    <th style="width:30%;">
+                    <th style="width:25%;">
                         <label class="common-label" for="name">업체명</label>
                     </th>
-                    <td style="width:60%;">
+                    <td style="width:50%;">
                         <input type="text" class="common-input" id="name" name="name" placeholder="1~20글자" th:value="${details.name}" required>
                     </td>
                 </tr>
                 <tr>
-                    <th rowspan="2" style="width:30%;">
+                    <th rowspan="2" style="width:25%;">
                         <label class="common-label">제휴기간</label>
                     </th>
-                    <th style="width:30%;">
-                        <label class="common-label" for="startDate">시작일</label>
+                    <th style="width:25%;">
+                        <label class="common-label" for="affiliate-start-date">시작일</label>
                     </th>
-                    <td style="width:60%;">
-                        <input type="text" class="common-input" id="startDate" name="startDate" placeholder="yyyy-mm-dd" th:value="${details.startDate}" required>
+                    <td style="width:50%;">
+                        <input
+                            type="date"
+                            class="common-date-input-flatpickr start-date"
+                            id="affiliate-start-date"
+                            name="startDate"
+                            placeholder="날짜선택"
+                            th:value="${#temporals.createDate(details.startDate, 'yyyy-MM-dd')}"
+                            required
+                        >
                     </td>
                 </tr>
                 <tr>
-                    <th style="width:30%;">
-                        <label class="common-label" for="endDate">종료일</label>
+                    <th style="width:25%;">
+                        <label class="common-label" for="affiliate-end-date">종료일</label>
                     </th>
-                    <td style="width:60%;">
-                        <input type="text" class="common-input" id="endDate" name="endDate" placeholder="yyyy-mm-dd" th:value="${details.endDate}" required>
+                    <td style="width:50%;">
+                        <input
+                            type="date"
+                            class="common-date-input-flatpickr end-date"
+                            id="affiliate-end-date"
+                            name="endDate"
+                            placeholder="날짜선택"
+                            th:value="${#temporals.createDate(details.endDate, 'yyyy-MM-dd')}"
+                            required
+                        >
                     </td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="width:50%;">
+                        <label class="common-label" for="total-converted-points">리워드 전환 현황</label>
+                    </th>
+                    <td style="width:50%;">
+                        <input type="text" class="common-input" id="total-converted-points" name="total-converted-points" placeholder="숫자" th:value="${#numbers.formatInteger(details.totalConvertedPoints, 0, 'COMMA')} + '점'" disabled>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </form>

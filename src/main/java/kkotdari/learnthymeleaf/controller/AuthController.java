@@ -18,6 +18,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, HttpSession session, Model model) {
+        System.out.println("username: " + username + " password: " + password);
         if (!"admin".equals(username) || !"1234".equals(password)) {
             model.addAttribute("tab", "login");
             return "fragments/auth/index :: content";

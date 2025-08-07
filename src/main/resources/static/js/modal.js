@@ -1,22 +1,4 @@
-window.route = function(path) {
-    console.log('window > route: path: ', path)
-    fetch(`/${path}`)
-        .then(res => {
-            console.log('window > route: fetch finished: ', res.ok)
-            if (!res.ok) {
-                throw new Error('Failed to load content')
-            }
-            return res.text()
-        })
-        .then(html => {
-            document.getElementById('content-container').innerHTML = html
-        })
-        .catch(error => {
-            console.error('window > route: error:', error)
-        })
-}
-
-window.openModal = function (path, width, height) {
+openModal = (path, width, height) => {
     fetch(path)
         .then(res => {
             if (!res.ok) throw new Error('Affiliate master details search failed')
@@ -41,19 +23,20 @@ window.openModal = function (path, width, height) {
             modal.style.width = width
             modal.style.height = height
             modal.style.overflowY = 'auto'
-            modal.style.borderRadius = '4px'
+            modal.style.borderRadius = '8px'
             modal.style.padding = '20px'
             modal.innerHTML = html
 
             overlay.appendChild(modal)
             document.body.appendChild(overlay)
+            initFlatpickr()
         })
         .catch(err => {
             console.error('affiliate > master > details search error: ', err)
         })
 }
 
-window.closeModal = function () {
+closeModal = function () {
     const overlay = document.getElementById('global-modal-overlay')
     if (overlay) {
         overlay.remove()

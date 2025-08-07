@@ -1,21 +1,28 @@
 .logo {
     grid-area: logo;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    white-space: nowrap;
+    overflow: visible;
+    min-width: 0;
 }
 .logo-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    width: 160px;
+    height: 100px;
+    top: 18px;
+    left:12px;
     font-family: Verdana, sans-serif;
     font-size: 20px;
     font-weight: 900;
     color:seagreen;
+    overflow: visible;
+    transition: all 1s;
 }
 .logo-text:hover {
     color:darkblue;
     cursor: pointer;
 
+}
+.logo-text.with-sidebar-off {
+    color:whitesmoke;
 }

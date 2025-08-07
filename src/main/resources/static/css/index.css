@@ -13,8 +13,17 @@ html, body {
     "sidebar content";
     grid-template-columns: 160px 1fr;
     grid-template-rows: 60px 1fr;
+    transition: grid-template-columns 1s;
+}
+.layout-container.with-sidebar-off {
+    display: grid;
+    grid-template-areas:
+    "logo header"
+    "sidebar content";
+    grid-template-columns: 0 1fr;
+    grid-template-rows: 60px 1fr;
 }
 .content-container {
     grid-area: content;
-    padding: 24px;
+    padding: 40px;
 }

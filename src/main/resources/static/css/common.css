@@ -1,16 +1,16 @@
 .common-title {
     width: fit-content;
-    height: 32px;
+    height: 24px;
     color: black;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
     text-align: left;
 }
 .common-title-sm {
     width: fit-content;
-    height: 24px;
+    height: 20px;
     color: black;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     text-align: left;
 }
@@ -22,7 +22,7 @@
 .common-table th {
     border-collapse: collapse;
     border: 1px solid darkgrey;
-    padding: 8px 4px 8px 4px;
+    padding: 8px;
     text-align: center;
     vertical-align: middle;
     font-size: 16px;
@@ -33,7 +33,7 @@
 .common-table td {
     border-collapse: collapse;
     border: 1px solid darkgrey;
-    padding: 4px;
+    padding: 8px;
     text-align: center;
     vertical-align: middle;
     font-size: 14px;
@@ -60,7 +60,7 @@
 .common-input-with-label > input {
     width: 80%;
     height: 24px;
-    padding: 2px 4px 2px 4px;
+    padding: 2px 12px 2px 12px;
     border: 1px solid darkgreen;
     border-radius: 4px;
     color: black;
@@ -85,8 +85,24 @@
     border-radius: 2px;
     color: black;
     background-color: transparent;
+    text-align: center;
 }
 .common-input:disabled {
+    color: darkgrey;
+    background-color: whitesmoke;
+}
+.common-date-input-flatpickr {
+    box-sizing: border-box;
+    width: 100%;
+    height: 24px;
+    padding: 2px 4px 2px 4px;
+    border: 1px solid darkgrey;
+    border-radius: 2px;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+}
+.common-date-input-flatpickr:disabled {
     color: darkgrey;
     background-color: whitesmoke;
 }

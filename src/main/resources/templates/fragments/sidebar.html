@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-<div th:fragment="content" class="sidebar">
-    <div class="sidebar-menus">
-        <div th:each="m : ${session.menus}" class="category-family">
-            <div class="category" th:text="${m.name}"></div>
+<div th:fragment="content" class="sidebar sidebar-toggle-adaptive">
+    <div
+        id="sidebar-toggle-btn"
+        class="sidebar-toggle-adaptive"
+        onclick="toggleSidebar()"
+    >
+        &lt;
+    </div>
+    <div class="sidebar-menus sidebar-toggle-adaptive">
+        <div th:each="m : ${session.menus}" class="category-family sidebar-toggle-adaptive">
+            <div class="category sidebar-toggle-adaptive" th:text="${m.name}"></div>
             <div
                 th:each="s : ${m.subs}"
-                class="subcategory"
+                class="subcategory sidebar-toggle-adaptive"
                 th:text="${s.name}"
                 th:attr="data-path=${s.path}"
                 onclick="route(this.dataset.path)"

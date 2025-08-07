@@ -1,9 +1,10 @@
 .affiliate-master {
-    min-width: 1400px;
+    min-width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    gap: 12px;
 }
 .open-modal-btn {
     width: 44px;
