@@ -16,7 +16,7 @@ public class HomeController {
     private MenuService menuService;
 
     @GetMapping
-    public String showHomePage(HttpSession session) {
+    public String goHomePage(HttpSession session) {
         List<Menu> menus = menuService.getMenus();
         session.setAttribute("menus", menus);
         return "index";
@@ -24,7 +24,12 @@ public class HomeController {
 
 
     @GetMapping("/home")
-    public String showHomeFragment() {
+    public String getHomeFragment() {
         return "fragments/index :: content";
+    }
+
+    @GetMapping("/header")
+    public String getHeaderFragment() {
+        return "fragments/header :: content";
     }
 }

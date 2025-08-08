@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     @GetMapping("/login")
-    public String showLoginForm(Model model) {
+    public String getLoginFragment(Model model) {
         model.addAttribute("tab", "login");
         return "fragments/auth/index :: content";
     }
@@ -30,7 +30,7 @@ public class AuthController {
     }
 
     @GetMapping("/signup")
-    public String showSignupForm(Model model) {
+    public String getSignupFragment(Model model) {
         model.addAttribute("tab", "signup");
         return "fragments/auth/index :: content";
     }

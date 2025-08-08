@@ -2,28 +2,39 @@ initListeners = (path) => {
     console.log('initListeners > path: ', path)
     switch (path) {
         case 'auth/login':
-            document.getElementById('login-form').addEventListener('submit', function (e) {
+            document.getElementById('login-form').addEventListener('submit', async function (e) {
                     e.preventDefault()
 
                     const form = e.target
                     const formData = new FormData(form)
 
-                    fetch('/auth/login', {
-                        method: 'POST',
-                        body: formData
-                    })
-                        .then(res => {
-                            if (!res.ok) {
-                                throw new Error('Login failed')
-                            }
-                            return res.text()
+                    try {
+                        const indexRes = await fetch('/auth/login', {
+                            method: 'POST',
+                            body: formData,
+                            credentials: 'include'
                         })
-                        .then(html => {
-                            document.getElementById('content-container').innerHTML = html
+
+                        if (!indexRes.ok) {
+                            console.error('auth > login > indexRes: ', indexRes)
+                            return
+                        }
+
+                        const indexResText = await indexRes.text()
+
+                        console.error('auth > login > indexResText: ', indexResText)
+                        document.getElementById('content-container').innerHTML = indexResText
+
+                        const headerRes = await fetch('header', {
+                            credentials: 'include'
                         })
-                        .catch(err => {
-                            console.error('auth > login > login error: ', err)
-                        })
+                        const headerResText = await headerRes.text()
+                        const headerEl = document.getElementById('header');
+                        headerEl.outerHTML = headerResText;
+                        initListeners('index')
+                    } catch (err) {
+                        console.error('auth > login > login error: ', err)
+                    }
                 }
             )
             break
