@@ -11,8 +11,7 @@ initListeners = (path) => {
                     try {
                         const indexRes = await fetch('/auth/login', {
                             method: 'POST',
-                            body: formData,
-                            credentials: 'include'
+                            body: formData
                         })
 
                         if (!indexRes.ok) {
@@ -25,9 +24,7 @@ initListeners = (path) => {
                         console.error('auth > login > indexResText: ', indexResText)
                         document.getElementById('content-container').innerHTML = indexResText
 
-                        const headerRes = await fetch('header', {
-                            credentials: 'include'
-                        })
+                        const headerRes = await fetch('header')
                         const headerResText = await headerRes.text()
                         const headerEl = document.getElementById('header');
                         headerEl.outerHTML = headerResText;

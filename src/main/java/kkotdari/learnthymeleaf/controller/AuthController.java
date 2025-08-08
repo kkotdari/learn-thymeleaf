@@ -41,4 +41,10 @@ public class AuthController {
         return "fragments/index :: content";
     }
 
+    @PostMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "fragments/index :: content";
+    }
+
 }
