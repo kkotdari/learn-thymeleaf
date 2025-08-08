@@ -29,13 +29,14 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    padding: 8px;
     gap: 8px;
     background-color: seagreen;
 }
 .category-family {
+    box-sizing: border-box;
     width: 100%;
     height: fit-content;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
