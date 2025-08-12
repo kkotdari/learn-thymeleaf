@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
 <div th:fragment="content" id="header" class="header">
     <div th:if="${session.user == null}" class="header-btn">
         <span class="header-text header-text-clickable" onclick="route('auth/login')">
@@ -26,5 +23,3 @@
         </ul>
     </div>
 </div>
-</body>
-</html>

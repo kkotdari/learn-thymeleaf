@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/assets :: content}"></head>
+<div th:replace="~{fragments/assets :: content}"></div>
 <body>
 <div class="layout-container sidebar-toggle-adaptive">
     <div th:replace="~{fragments/logo :: content}"></div>
@@ -8,6 +8,5 @@
     <div th:replace="~{fragments/sidebar :: content}"></div>
     <div th:insert="~{fragments/index :: content}" id="content-container" class="content-container"></div>
 </div>
-
 </body>
 </html>

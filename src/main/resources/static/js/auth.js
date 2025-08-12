@@ -17,7 +17,7 @@ const logout = async () => {
 
         const indexResText = await indexRes.text()
 
-        console.error('auth > logout > indexResText: ', indexResText)
+        console.log('auth > logout > indexResText: ', indexResText)
         document.getElementById('content-container').innerHTML = indexResText
 
         const headerRes = await fetch('header')

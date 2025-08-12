@@ -1,0 +1,24 @@
+.affiliate-master {
+    min-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 12px;
+}
+.open-modal-btn {
+    width: 44px;
+    height: 24px;
+    padding: 4px;
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    background-color: whitesmoke;
+}
+.open-modal-btn:hover {
+    font-weight: 500;
+    color: whitesmoke;
+    background-color: mediumseagreen;
+}

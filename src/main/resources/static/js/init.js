@@ -21,7 +21,7 @@ initListeners = (path) => {
 
                         const indexResText = await indexRes.text()
 
-                        console.error('auth > login > indexResText: ', indexResText)
+                        console.log('auth > login > indexResText: ', indexResText)
                         document.getElementById('content-container').innerHTML = indexResText
 
                         const headerRes = await fetch('header')
