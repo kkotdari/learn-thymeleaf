@@ -24,12 +24,21 @@
 }
 .common-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.common-table thead {
+    position: sticky;
+    top: 0;
     border: 1px solid darkgrey;
 }
+.common-table tr:first-child th {
+    border-top: 1px solid darkgrey;
+}
 .common-table th {
-    border-collapse: collapse;
     border: 1px solid darkgrey;
+    border-left: none;
+    border-top: none;
     padding: 8px;
     text-align: center;
     vertical-align: middle;
@@ -39,14 +48,19 @@
     background-color: whitesmoke;
 }
 .common-table td {
-    border-collapse: collapse;
     border: 1px solid darkgrey;
+    border-left: none;
+    border-top: none;
     padding: 8px;
     text-align: center;
     vertical-align: middle;
     font-size: 14px;
     font-weight: 400;
     color: black;
+}
+.common-table th:first-child,
+.common-table td:first-child {
+    border-left: 1px solid darkgrey;
 }
 .common-table-td-text.clickable:hover {
     color: darkblue;
