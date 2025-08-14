@@ -1,0 +1,27 @@
+<div th:fragment="content(rewardConvertHistories)" id="affiliate-reward-convert-history-list" class="affiliate-reward-convert-history-list">
+    <div class="common-title-md">리워드 전환 내역</div>
+    <table class="common-table">
+        <thead>
+        <tr>
+            <th style="width: 10%">순번</th>
+            <th style="width: 20%">전환 일시</th>
+            <th style="width: 20%">전환 포인트(점)</th>
+            <th style="width: 15%">전환 비율</th>
+            <th style="width: 20%">전환 후 리워드(개)</th>
+            <th style="width: 15%">전환 상태</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr
+                th:each="h, iterStat : ${rewardConvertHistories}"
+        >
+            <td th:text="${iterStat.index} + 1"></td>
+            <td th:text="${h.convertDatetime}"></td>
+            <td th:text="${h.convertTargetPoint}"></td>
+            <td th:text="${h.convertRate}"></td>
+            <td th:text="${h.convertedReward}"></td>
+            <td th:text="${h.statCode}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

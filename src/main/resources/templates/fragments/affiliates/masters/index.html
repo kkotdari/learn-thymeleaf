@@ -1,0 +1,73 @@
+<div th:fragment="content" class="affiliate-master">
+    <div class="common-title-lg">제휴사 마스터</div>
+    <div class="affiliate-master-container">
+        <div class="affiliate-master-affiliate-list">
+            <div class="common-title-md">제휴사 목록</div>
+            <table class="common-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="width: 5%">
+                            순번
+                        </th>
+                        <th rowspan="2" style="width: 15%">
+                            제휴사코드
+                        </th>
+                        <th rowspan="2" style="width: 20%">
+                            제휴사명
+                        </th>
+                        <th colspan="2" style="width: 40%">
+                            제휴기간
+                        </th>
+                        <th rowspan="2" style="width: 15%">
+                            총 전환리워드
+                        </th>
+                        <th rowspan="2" style="width: 5%">
+                            관리
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            시작일
+                        </th>
+                        <th>
+                            종료일
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        th:each="a, iterStat : ${affiliates}"
+                    >
+                        <td th:text="${iterStat.index} + 1"></td>
+                        <td th:text="${a.ticker}"></td>
+                        <td th:text="${a.name}"></td>
+                        <td>
+                            <input
+                                type="date"
+                                class="common-date-input-flatpickr start-date"
+                                th:value="${#temporals.createDate(a.startDate, 'yyyy-MM-dd')}"
+                            >
+                        </td>
+                        <td>
+                            <input
+                                type="date"
+                                class="common-date-input-flatpickr end-date"
+                                th:value="${#temporals.createDate(a.endDate, 'yyyy-MM-dd')}"
+                            >
+                        </td>
+                        <td th:text="${#numbers.formatInteger(a.totalConvertedPoints, 0, 'COMMA')} + '점'"></td>
+                        <td>
+                            <button
+                                type="button"
+                                class="open-modal-btn"
+                                th:onclick="|openModal('/affiliates/masters/' + ${a.id}, 600, 600)|"
+                            >
+                                열기
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

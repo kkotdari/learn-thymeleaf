@@ -25,5 +25,5 @@ html, body {
 }
 .content-container {
     grid-area: content;
-    padding: 40px;
+    padding: 20px 40px 20px 40px;
 }

@@ -8,12 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/affiliate/master")
-public class AffliateMasterController {
+@RestController()
+@RequestMapping("/affiliates/masters")
+public class AffiliateMasterController {
 
     @Resource
     private AffiliateMasterService affiliateMasterService;
@@ -22,13 +23,13 @@ public class AffliateMasterController {
     public String showPage(Model model) {
         List<Affiliate> affiliates = affiliateMasterService.getAll();
         model.addAttribute("affiliates", affiliates);
-        return "fragments/affiliate/master :: content";
+        return "fragments/affiliates/masters/index :: content";
     }
 
     @GetMapping("/{id}")
     public String showDetailPage(Model model, @PathVariable long id) {
         Affiliate details = affiliateMasterService.getDetails(id);
         model.addAttribute("details", details);
-        return "fragments/affiliate/master-details :: content";
+        return "fragments/affiliates/masters/details :: content";
     }
 }

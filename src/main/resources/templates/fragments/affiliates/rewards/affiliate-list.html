@@ -1,0 +1,19 @@
+<div th:fragment="content(affiliates)" class="affiliate-reward-affiliate-list">
+    <div class="common-title-md">제휴사 목록</div>
+    <table class="common-table">
+        <thead>
+            <tr>
+                <th style="width: 20%">순번</th>
+                <th style="width: 30%">제휴사코드</th>
+                <th style="width: 50%">제휴사명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="a, iterStat : ${affiliates}">
+                <td th:text="${iterStat.index + 1}"></td>
+                <td th:text="${a.ticker}"></td>
+                <td th:text="${a.name}" th:onclick="|filterRewardConvertHistoryList(${a.id})|"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

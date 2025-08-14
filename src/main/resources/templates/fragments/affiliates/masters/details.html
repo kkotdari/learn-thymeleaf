@@ -9,7 +9,7 @@
                         <label class="common-label">기본정보</label>
                     </th>
                     <th style="width:25%;">
-                        <label class="common-label" for="ticker">업체코드</label>
+                        <label class="common-label" for="ticker">제휴사코드</label>
                     </th>
                     <td style="width:50%;">
                         <input type="text" class="common-input" id="ticker" name="ticker" placeholder="1~10글자. 영문 대문자" th:value="${details.ticker}" disabled>
@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <th style="width:25%;">
-                        <label class="common-label" for="name">업체명</label>
+                        <label class="common-label" for="name">제휴사명</label>
                     </th>
                     <td style="width:50%;">
                         <input type="text" class="common-input" id="name" name="name" placeholder="1~20글자" th:value="${details.name}" required>

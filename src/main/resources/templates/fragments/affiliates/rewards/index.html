@@ -1,0 +1,7 @@
+<div th:fragment="content" class="affiliate-reward">
+    <div class="common-title-lg">리워드 관리</div>
+    <div class="affiliate-reward-container">
+        <div th:replace="~{fragments/affiliates/rewards/affiliate-list :: content(${affiliates})}"></div>
+        <div th:replace="~{fragments/affiliates/rewards/convert-history-list :: content(${rewardConvertHistories})}"></div>
+    </div>
+</div>
