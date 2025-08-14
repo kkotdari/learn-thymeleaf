@@ -32,31 +32,29 @@
             </tr>
             </tbody>
         </table>
-        <div class="common-page-btn-row">
-            <ul
-                class="common-page-btn-row-container"
-                th:with="
-                    startPageOrig=${pageInfo.currPage - 3}
-                    , endPageOrig=${pageInfo.currPage + 3}
-                    , startPageShortfall=${startPageOrig < 1 ? 1 - startPageOrig : 0}
-                    , endPageShortfall=${endPageOrig > pageInfo.totalPages ? endPageOrig - pageInfo.totalPages : 0}
-                    , startPageCalculated=${startPageOrig - endPageShortfall < 1 ? 1 : startPageOrig - endPageShortfall}
-                    , endPageCalculated=${endPageOrig + startPageShortfall > pageInfo.totalPages ? pageInfo.totalPages : endPageOrig + startPageShortfall}"
-            >
-                <li th:unless="${startPageCalculated == 1}">
-                    <button
-                        class="common-page-btn"
-                        th:text="1"
-                        th:onclick="|filterRewardConvertHistoryList(${affiliateId}, 1, 10)|"
-                    >
-                    </button>
-                </li>
-                <li th:unless="${startPageCalculated == 1}">
-                    <span>···</span>
-                </li>
+        <div class="common-page-btn-row"
+            th:with="
+                startPageOrig=${pageInfo.currPage - 3}
+                , endPageOrig=${pageInfo.currPage + 3}
+                , startPageShortfall=${startPageOrig < 1 ? 1 - startPageOrig : 0}
+                , endPageShortfall=${endPageOrig > pageInfo.totalPages ? endPageOrig - pageInfo.totalPages : 0}
+                , startPageCalculated=${startPageOrig - endPageShortfall < 1 ? 1 : startPageOrig - endPageShortfall}
+                , endPageCalculated=${endPageOrig + startPageShortfall > pageInfo.totalPages ? pageInfo.totalPages : endPageOrig + startPageShortfall}"
+        >
+            <div class="common-page-btn-to-start">
+                <button
+                    th:unless="${startPageCalculated == 1}"
+                    class="common-page-btn"
+                    th:text="1"
+                    th:onclick="|filterRewardConvertHistoryList(${affiliateId}, 1, 10)|"
+                >
+                </button>
+                <span th:unless="${startPageCalculated == 1}">···</span>
+            </div>
+            <ul class="common-page-btn-list">
                 <li
                     th:each="p : ${#numbers.sequence(startPageCalculated, endPageCalculated)}"
-                    class="common-page-btn-container"
+                    class="common-page-btn-item"
                 >
                     <button
                         th:class="${p == pageInfo.currPage ? 'common-page-btn-curr' : 'common-page-btn'}"
@@ -65,18 +63,17 @@
                     >
                     </button>
                 </li>
-                <li th:unless="${endPageCalculated == pageInfo.totalPages}">
-                    <span>···</span>
-                </li>
-                <li th:unless="${endPageCalculated == pageInfo.totalPages}">
-                    <button
+            </ul>
+            <div class="common-page-btn-to-end">
+                <span th:unless="${endPageCalculated == pageInfo.totalPages}">···</span>
+                <button
+                        th:unless="${endPageCalculated == pageInfo.totalPages}"
                         class="common-page-btn"
                         th:text="${pageInfo.totalPages}"
                         th:onclick="|filterRewardConvertHistoryList(${affiliateId}, ${pageInfo.totalPages}, 10)|"
-                    >
-                    </button>
-                </li>
-            </ul>
+                >
+                </button>
+            </div>
         </div>
     </div>
 </div>

@@ -54,29 +54,60 @@
 }
 .common-page-btn-row {
     width: 100%;
-    height: fit-content;
+    height: 28px;
     display: flex;
     justify-content: center;
+    gap:4px;
 }
-.common-page-btn-row-container {
+.common-page-btn-to-start {
+    flex: 1;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 4px;
+    color: darkgreen;
+}
+.common-page-btn-to-end {
+    flex: 1;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2px;
+    color: darkgreen;
+}
+.common-page-btn-to-start span, .common-page-btn-to-end span {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgreen;
+}
+.common-page-btn-list {
     width: fit-content;
-    height: fit-content;
+    height: 28px;
+    padding: 0;
+    margin: 0;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4px;
 }
-.common-page-btn-row li {
-    width: fit-content;
-    height: fit-content;
+.common-page-btn-item {
+    width: 28px;
+    height: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.common-page-btn-container {
-    width: fit-content;
-    height: fit-content;
 }
 .common-page-btn {
     width: 28px;
@@ -87,16 +118,6 @@
     background-color: whitesmoke;
     border: 1px solid darkgreen;
     border-radius: 4px;
-}
-.common-page-btn-row li span {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: darkgreen;
 }
 .common-page-btn-curr {
     width: 28px;
