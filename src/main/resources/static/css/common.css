@@ -68,7 +68,7 @@
     justify-content: end;
     align-items: center;
     gap: 4px;
-    color: darkgreen;
+    color: seagreen;
 }
 .common-page-btn-to-end {
     flex: 1;
@@ -79,7 +79,7 @@
     justify-content: start;
     align-items: center;
     gap: 2px;
-    color: darkgreen;
+    color: seagreen;
 }
 .common-page-btn-to-start span, .common-page-btn-to-end span {
     width: 28px;
@@ -89,7 +89,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: darkgreen;
+    color: seagreen;
 }
 .common-page-btn-list {
     width: fit-content;
@@ -114,9 +114,9 @@
     height: 28px;
     font-size: 14px;
     font-weight: 500;
-    color: darkgreen;
-    background-color: whitesmoke;
-    border: 1px solid darkgreen;
+    color: seagreen;
+    background-color: transparent;
+    border: 1px solid seagreen;
     border-radius: 4px;
 }
 .common-page-btn-curr {
@@ -125,8 +125,8 @@
     font-size: 14px;
     font-weight: 500;
     color: whitesmoke;
-    background-color: darkgreen;
-    border: 1px solid darkgreen;
+    background-color: seagreen;
+    border: 1px solid seagreen;
     border-radius: 4px;
 }
 .common-page-btn:hover {
