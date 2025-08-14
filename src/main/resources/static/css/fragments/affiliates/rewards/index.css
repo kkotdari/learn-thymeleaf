@@ -27,18 +27,18 @@
 }
 .affiliate-reward-affiliate-list .wrapper {
     width: 100%;
-    max-height: 378px;
+    max-height: 377px;
     overflow-x: hidden;
     overflow-y: auto;
 }
-.affiliate-reward-convert-history-list-container {
+.affiliate-reward-convert-history-list {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: start;
     align-items: start;
 }
-.affiliate-reward-convert-history-list {
+.affiliate-reward-convert-history-list-container {
     width: 80%;
     height: 100%;
     display: flex;

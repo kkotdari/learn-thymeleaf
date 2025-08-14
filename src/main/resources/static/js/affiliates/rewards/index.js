@@ -4,6 +4,6 @@ filterRewardConvertHistoryList = async (affiliateId, currPage, pageSize) => {
         pageSize: pageSize
     })
     const res = await fetch(`affiliates/rewards/histories/affiliate/${affiliateId}?${params.toString()}`)
-    const el = document.getElementById('affiliate-reward-convert-history-list-container')
+    const el = document.getElementById('affiliate-reward-convert-history-list')
     el.outerHTML = await res.text()
 }
