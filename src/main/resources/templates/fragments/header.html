@@ -1,18 +1,18 @@
 <div th:fragment="content" id="header" class="header">
     <div th:if="${session.user == null}" class="header-btn">
-        <span class="header-text header-text-clickable" onclick="route('auth/login')">
+        <span class="header-text clickable" onclick="route('auth/login')">
             로그인
         </span>
         <span class="header-text">
             &nbsp;|&nbsp;
         </span>
-        <span class="header-text header-text-clickable" onclick="route('auth/signup')">
+        <span class="header-text clickable" onclick="route('auth/signup')">
             회원가입
         </span>
     </div>
     <div th:if="${session.user != null}" class="header-btn">
         <span
-            class="header-text header-text-clickable"
+            class="header-text clickable"
             onclick="toggleHeaderContextMenuList()"
         >
             [[${session.user.username}]]님 안녕하세요

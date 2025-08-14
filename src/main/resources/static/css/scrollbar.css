@@ -6,12 +6,12 @@
 /* 스크롤 막대 (슬라이더) */
 .common-scrollbar::-webkit-scrollbar-thumb {
     background-color: whitesmoke;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .common-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: mediumseagreen;
 }
 .common-scrollbar::-webkit-scrollbar-track {
     background-color: transparent;
-    border-radius: 4px;
+    border-radius: 2px;
 }

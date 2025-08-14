@@ -48,7 +48,7 @@
     font-weight: 400;
     color: black;
 }
-.common-table-td-text-clickable:hover {
+.common-table-td-text.clickable:hover {
     color: darkblue;
     cursor: pointer;
 }
@@ -112,6 +112,7 @@
 .common-page-btn {
     width: 28px;
     height: 28px;
+    padding: 0;
     font-size: 14px;
     font-weight: 500;
     color: seagreen;
@@ -119,9 +120,10 @@
     border: 1px solid seagreen;
     border-radius: 4px;
 }
-.common-page-btn-curr {
+.common-page-btn.curr {
     width: 28px;
     height: 28px;
+    padding: 0;
     font-size: 14px;
     font-weight: 500;
     color: whitesmoke;

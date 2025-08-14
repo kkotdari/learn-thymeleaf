@@ -15,7 +15,7 @@
     font-weight: 700;
     color: whitesmoke;
 }
-.header-text-clickable:hover {
+.header-text.clickable:hover {
     color: darkblue;
     cursor: pointer;
 }

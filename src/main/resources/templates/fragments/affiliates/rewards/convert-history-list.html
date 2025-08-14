@@ -56,7 +56,7 @@
                     class="common-page-btn-item"
                 >
                     <button
-                        th:class="${p == pageInfo.currPage ? 'common-page-btn-curr' : 'common-page-btn'}"
+                        th:class="${p == pageInfo.currPage ? 'common-page-btn curr' : 'common-page-btn'}"
                         th:text="${p}"
                         th:onclick="|filterRewardConvertHistoryList(${affiliateId}, ${p}, 10)|"
                     >
