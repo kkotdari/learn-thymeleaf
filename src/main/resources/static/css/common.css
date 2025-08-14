@@ -241,3 +241,14 @@
     color: whitesmoke;
     background-color:mediumseagreen;
 }
+.scrollable {
+    overflow: auto;
+}
+.scrollable-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.scrollable-y {
+    overflow-x: hidden;
+    overflow-y: auto;
+}

@@ -28,8 +28,6 @@
 .affiliate-reward-affiliate-list .wrapper {
     width: 100%;
     max-height: 377px;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 .affiliate-reward-convert-history-list {
     width: 100%;
