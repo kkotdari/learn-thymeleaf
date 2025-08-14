@@ -48,6 +48,73 @@
     font-weight: 400;
     color: black;
 }
+.common-table-td-text-clickable:hover {
+    color: darkblue;
+    cursor: pointer;
+}
+.common-page-btn-row {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+.common-page-btn-row-container {
+    width: fit-content;
+    height: fit-content;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.common-page-btn-row li {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.common-page-btn-container {
+    width: fit-content;
+    height: fit-content;
+}
+.common-page-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: darkgreen;
+    background-color: whitesmoke;
+    border: 1px solid darkgreen;
+    border-radius: 4px;
+}
+.common-page-btn-row li span {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: darkgreen;
+}
+.common-page-btn-curr {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: whitesmoke;
+    background-color: darkgreen;
+    border: 1px solid darkgreen;
+    border-radius: 4px;
+}
+.common-page-btn:hover {
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: darkblue;
+    border-color: darkblue;
+    cursor: pointer;
+}
 .common-input-with-label {
     width: 100%;
     height: fit-content;

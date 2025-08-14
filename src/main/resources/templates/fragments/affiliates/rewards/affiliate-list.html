@@ -1,4 +1,4 @@
-<div th:fragment="content(affiliates)" class="affiliate-reward-affiliate-list">
+<div th:fragment="content(affiliateList)" class="affiliate-reward-affiliate-list">
     <div class="common-title-md">제휴사 목록</div>
     <table class="common-table">
         <thead>
@@ -9,10 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="a, iterStat : ${affiliates}">
+            <tr th:each="a, iterStat : ${affiliateList}">
                 <td th:text="${iterStat.index + 1}"></td>
                 <td th:text="${a.ticker}"></td>
-                <td th:text="${a.name}" th:onclick="|filterRewardConvertHistoryList(${a.id})|"></td>
+                <td class="common-table-td-text-clickable" th:text="${a.name}" th:onclick="|filterRewardConvertHistoryList(${a.id}, 1, 10)|"></td>
             </tr>
         </tbody>
     </table>

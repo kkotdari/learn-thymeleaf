@@ -1,27 +1,82 @@
-<div th:fragment="content(rewardConvertHistories)" id="affiliate-reward-convert-history-list" class="affiliate-reward-convert-history-list">
-    <div class="common-title-md">리워드 전환 내역</div>
-    <table class="common-table">
-        <thead>
-        <tr>
-            <th style="width: 10%">순번</th>
-            <th style="width: 20%">전환 일시</th>
-            <th style="width: 20%">전환 포인트(점)</th>
-            <th style="width: 15%">전환 비율</th>
-            <th style="width: 20%">전환 후 리워드(개)</th>
-            <th style="width: 15%">전환 상태</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr
-                th:each="h, iterStat : ${rewardConvertHistories}"
-        >
-            <td th:text="${iterStat.index} + 1"></td>
-            <td th:text="${h.convertDatetime}"></td>
-            <td th:text="${h.convertTargetPoint}"></td>
-            <td th:text="${h.convertRate}"></td>
-            <td th:text="${h.convertedReward}"></td>
-            <td th:text="${h.statCode}"></td>
-        </tr>
-        </tbody>
-    </table>
+<div
+    th:fragment="content(affiliateId, rewardConvertHistoryList, pageInfo)"
+    id="affiliate-reward-convert-history-list-container"
+    class="affiliate-reward-convert-history-list-container"
+>
+    <div th:if="${affiliateId == null}" class="affiliate-reward-convert-history-list">
+        <div class="common-title-md">← 제휴사를 선택하세요</div>
+    </div>
+    <div th:if="${affiliateId != null}" class="affiliate-reward-convert-history-list">
+        <div class="common-title-md">리워드 전환 내역</div>
+        <table class="common-table">
+            <thead>
+            <tr>
+                <th style="width: 10%">순번</th>
+                <th style="width: 20%">전환 일시</th>
+                <th style="width: 20%">전환 포인트(점)</th>
+                <th style="width: 15%">전환 비율</th>
+                <th style="width: 20%">전환 후 리워드(개)</th>
+                <th style="width: 15%">전환 상태</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+                th:each="h, iterStat : ${rewardConvertHistoryList}"
+            >
+                <td th:text="${iterStat.index + ((pageInfo.currPage - 1) * pageInfo.pageSize) + 1}"></td>
+                <td th:text="${h.convertDatetime}"></td>
+                <td th:text="${h.convertTargetPoint}"></td>
+                <td th:text="${h.convertRate}"></td>
+                <td th:text="${h.convertedReward}"></td>
+                <td th:text="${h.statCode == 'SUCCESS' ? '전환완료' : (h.statCode == 'FAIL' ? '전환실패' : '미전환')}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="common-page-btn-row">
+            <ul
+                class="common-page-btn-row-container"
+                th:with="
+                    startPageOrig=${pageInfo.currPage - 3}
+                    , endPageOrig=${pageInfo.currPage + 3}
+                    , startPageShortfall=${startPageOrig < 1 ? 1 - startPageOrig : 0}
+                    , endPageShortfall=${endPageOrig > pageInfo.totalPages ? endPageOrig - pageInfo.totalPages : 0}
+                    , startPageCalculated=${startPageOrig - endPageShortfall < 1 ? 1 : startPageOrig - endPageShortfall}
+                    , endPageCalculated=${endPageOrig + startPageShortfall > pageInfo.totalPages ? pageInfo.totalPages : endPageOrig + startPageShortfall}"
+            >
+                <li th:unless="${startPageCalculated == 1}">
+                    <button
+                        class="common-page-btn"
+                        th:text="1"
+                        th:onclick="|filterRewardConvertHistoryList(${affiliateId}, 1, 10)|"
+                    >
+                    </button>
+                </li>
+                <li th:unless="${startPageCalculated == 1}">
+                    <span>···</span>
+                </li>
+                <li
+                    th:each="p : ${#numbers.sequence(startPageCalculated, endPageCalculated)}"
+                    class="common-page-btn-container"
+                >
+                    <button
+                        th:class="${p == pageInfo.currPage ? 'common-page-btn-curr' : 'common-page-btn'}"
+                        th:text="${p}"
+                        th:onclick="|filterRewardConvertHistoryList(${affiliateId}, ${p}, 10)|"
+                    >
+                    </button>
+                </li>
+                <li th:unless="${endPageCalculated == pageInfo.totalPages}">
+                    <span>···</span>
+                </li>
+                <li th:unless="${endPageCalculated == pageInfo.totalPages}">
+                    <button
+                        class="common-page-btn"
+                        th:text="${pageInfo.totalPages}"
+                        th:onclick="|filterRewardConvertHistoryList(${affiliateId}, ${pageInfo.totalPages}, 10)|"
+                    >
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

@@ -28,9 +28,9 @@ public class DefaultAffiliateMasterService implements AffiliateMasterService {
     @Override
     public Affiliate getDetails(long id) {
         try {
-            List<Affiliate> list = objectMapper.readValue(affiliatesJson, new TypeReference<>() {});
+            List<Affiliate> affiliateList = objectMapper.readValue(affiliatesJson, new TypeReference<>() {});
 
-        return list.stream()
+        return affiliateList.stream()
                     .filter(a -> a.getId() == id)
                     .findFirst()
                     .orElse(null);

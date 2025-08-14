@@ -28,18 +28,18 @@ public class DefaultAffiliateRewardService implements AffiliateRewardService {
             return rewardConvertHistoryList;
         }
 
-        List<Affiliate> affiliates = affiliateMasterService.getAll();
+        List<Affiliate> affiliateList = affiliateMasterService.getAll();
         Random random = new Random();
         int[] convertRatePool = {1, 2, 5, 10};
 
         List<Tuple<Affiliate, Integer>> affiliatesAndConvertRateList = new ArrayList<>();
-        for (Affiliate a : affiliates) {
+        for (Affiliate a : affiliateList) {
             affiliatesAndConvertRateList.add(new Tuple<Affiliate, Integer>(a, convertRatePool[random.nextInt(convertRatePool.length)]));
         }
 
         rewardConvertHistoryList = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 5000; i++) {
             RewardConvertHistory history = new RewardConvertHistory();
             Tuple<Affiliate, Integer> randAffiliateTuple = affiliatesAndConvertRateList.get(random.nextInt(affiliatesAndConvertRateList.size()));
             history.setId(randAffiliateTuple._1().getId());
