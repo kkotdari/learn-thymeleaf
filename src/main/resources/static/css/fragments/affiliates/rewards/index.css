@@ -18,16 +18,17 @@
 .affiliate-reward-affiliate-list {
     width: 20%;
     min-width: 400px;
-    height: 100%;
+    height: fit-content;
+    max-height: 377px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
     gap: 8px;
 }
-.affiliate-reward-affiliate-list .wrapper {
+.affiliate-reward-affiliate-list .size-wrapper {
     width: 100%;
-    max-height: 377px;
+    height: fit-content;
 }
 .affiliate-reward-convert-history-list {
     width: 100%;

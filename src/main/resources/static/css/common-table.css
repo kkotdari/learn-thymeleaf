@@ -1,0 +1,46 @@
+.common-table-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.common-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.common-table thead {
+    position: sticky;
+    top: 0;
+}
+.common-table thead::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-top: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+}
+.common-table th {
+    border: 1px solid darkgrey;
+    padding: 8px;
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 500;
+}
+.common-table td {
+    border: 1px solid orange;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+}
+.common-table-td-text.clickable:hover {
+    color: darkblue;
+    cursor: pointer;
+}

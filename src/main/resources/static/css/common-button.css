@@ -1,0 +1,23 @@
+.common-horizontal-buttons {
+    width: 100%;
+    height: fit-content;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.common-button {
+    width: 25%;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: darkgreen;
+}
+.common-button:hover {
+    color: whitesmoke;
+    background-color:mediumseagreen;
+}
