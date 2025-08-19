@@ -37,6 +37,13 @@
     justify-content: start;
     align-items: start;
 }
+.affiliate-reward-convert-history-list-top {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .affiliate-reward-convert-history-list-container {
     width: 80%;
     height: 100%;

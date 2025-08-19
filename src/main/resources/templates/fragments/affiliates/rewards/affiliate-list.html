@@ -14,7 +14,7 @@
                     <tr th:each="a, iterStat : ${affiliateList}">
                         <td th:text="${iterStat.index + 1}"></td>
                         <td th:text="${a.ticker}"></td>
-                        <td class="common-table-td-text clickable" th:text="${a.name}" th:onclick="|filterRewardConvertHistoryList(${a.id}, 1, 10)|"></td>
+                        <td class="common-table-td-text clickable" th:text="${a.name}" th:onclick="|showRewardConvertHistoryList(${a.id}, 1, 10, 'date-asc')|"></td>
                     </tr>
                 </tbody>
             </table>

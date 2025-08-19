@@ -2,6 +2,6 @@
     <div class="common-title-lg">리워드 관리</div>
     <div class="affiliate-reward-container">
         <div th:replace="~{fragments/affiliates/rewards/affiliate-list :: content(${affiliateList})}"></div>
-        <div th:replace="~{fragments/affiliates/rewards/convert-history-list :: content(${affiliateId}, ${rewardConvertHistoryList}, ${pageInfo})}"></div>
+        <div th:replace="~{fragments/affiliates/rewards/convert-history-list :: content(${affiliateId}, ${rewardConvertHistoryList}, ${pageInfo}, ${currOrder})}"></div>
     </div>
 </div>

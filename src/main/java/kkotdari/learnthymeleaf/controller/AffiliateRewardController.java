@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/affiliates/rewards")
@@ -32,17 +34,30 @@ public class AffiliateRewardController {
     }
 
     @GetMapping("/histories/affiliate/{affiliateId}")
-    public String getAffiliateHistoryList(@PathVariable long affiliateId, @RequestParam int currPage, @RequestParam int pageSize, Model model) {
+    public String getAffiliateHistoryList(@PathVariable long affiliateId, @RequestParam int currPage, @RequestParam int pageSize, @RequestParam String currOrder, Model model) {
         try {
             List<RewardConvertHistory> rewardConvertHistoryList = affiliateRewardService.getAllOfAffiliate(affiliateId);
-            List<RewardConvertHistory> pageDRewardConvertHistoryList = rewardConvertHistoryList.subList((currPage - 1) * pageSize, Math.min((currPage * pageSize), rewardConvertHistoryList.size()));
-            model.addAttribute("rewardConvertHistoryList", pageDRewardConvertHistoryList);
+
+            Comparator<RewardConvertHistory> orderCond = switch (currOrder) {
+                case "date-desc" -> Comparator.comparing(RewardConvertHistory::getConvertDatetime).reversed();
+                case "rewards-asc" -> Comparator.comparing(RewardConvertHistory::getConvertedReward);
+                case "rewards-desc" -> Comparator.comparing(RewardConvertHistory::getConvertedReward).reversed();
+                default -> Comparator.comparing(RewardConvertHistory::getConvertDatetime);
+            };
+
+            List<RewardConvertHistory> orderedRewardConvertHistoryList = rewardConvertHistoryList.stream()
+                    .sorted(orderCond)
+                    .toList();
+            List<RewardConvertHistory> pagedRewardConvertHistoryList = orderedRewardConvertHistoryList.subList((currPage - 1) * pageSize, Math.min((currPage * pageSize), rewardConvertHistoryList.size()));
+            model.addAttribute("rewardConvertHistoryList", pagedRewardConvertHistoryList);
 
             PageInfo pageInfo = new PageInfo();
             pageInfo.setCurrPage(currPage);
             pageInfo.setPageSize(pageSize);
             pageInfo.setTotalPages((int) Math.ceil((double) rewardConvertHistoryList.size() / pageSize));
             model.addAttribute("pageInfo", pageInfo);
+
+            model.addAttribute("currOrder", currOrder == null || "undefined".equals(currOrder) ? "date-asc" : currOrder);
 
             model.addAttribute("affiliateId", affiliateId);
         } catch (Exception e) {

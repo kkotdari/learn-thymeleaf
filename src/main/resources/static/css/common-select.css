@@ -1,0 +1,12 @@
+.common-dropdown-list {
+    width: 200px;
+    height: 20px;
+    padding-left: 8px;
+    border: 1px solid darkgreen;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 400;
+}
+.common-dropdown-item {
+
+}
