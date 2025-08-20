@@ -34,7 +34,7 @@
             <tbody>
             <tr th:each="h, iterStat : ${rewardConvertHistoryList}">
                 <td th:text="${iterStat.index + ((pageInfo.currPage - 1) * pageInfo.pageSize) + 1}"></td>
-                <td th:text="${#temporals.format(#temporals.createDateTime(h.convertDatetime, 'yyyy-MM-dd HH:mm:ss'), 'y년 M월 d일 a h시 m분 s초')}"></td>
+                <td th:data-value="${h.convertDatetime}"></td>
                 <td th:text="${h.convertTargetPoint}"></td>
                 <td th:text="${h.convertRate}"></td>
                 <td th:text="${h.convertedReward}"></td>
