@@ -6,7 +6,7 @@
     min-width: 0;
 }
 .logo-text {
-    position: fixed;
+    position: absolute;
     width: 160px;
     height: 100px;
     top: 18px;
