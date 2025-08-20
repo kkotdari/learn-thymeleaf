@@ -10,19 +10,18 @@
 .common-table thead {
     position: sticky;
     top: 0;
+    z-index: 2;
 }
-.common-table thead::before {
+.common-table thead::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    border-top: 1px solid darkgrey;
-    border-bottom: 1px solid darkgrey;
+    inset: 0;
+    box-shadow: inset 0 1px darkgrey, inset 1px 0 darkgrey;
+    pointer-events: none;
 }
 .common-table th {
-    border: 1px solid darkgrey;
+    position: sticky;
+    top: 0;
     padding: 8px;
     color: black;
     background-color: whitesmoke;
@@ -31,14 +30,40 @@
     font-size: 16px;
     font-weight: 500;
 }
+.common-table th::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 -1px darkgrey, inset -1px 0 darkgrey;
+    pointer-events: none;
+}
+.common-table tbody {
+    position: relative;
+    top: 0;
+}
+.common-table tbody::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 1px 0 darkgrey;
+    pointer-events: none;
+}
 .common-table td {
-    border: 1px solid darkgrey;
+    position: relative;
+    top: 0;
     padding: 8px;
     text-align: center;
     vertical-align: middle;
     font-size: 14px;
     font-weight: 400;
     color: black;
+}
+.common-table td::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 -1px darkgrey, inset -1px 0 darkgrey;
+    pointer-events: none;
 }
 .common-table-td-text.clickable:hover {
     color: darkblue;
